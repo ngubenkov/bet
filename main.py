@@ -68,12 +68,8 @@ def login(browser):
     btn_go.click()
 
     time.sleep(5)
-    print(browser)
-    frame = WebDriverWait(browser, 50).until(EC.presence_of_all_elements_located((By.TAG_NAME, 'iframe')))
-    print(frame)
-    browser.switch_to.frame(frame[1])
-    print("switched")
-    print(browser)
+    frame = WebDriverWait(browser, 50).until(EC.presence_of_all_elements_located((By.TAG_NAME, 'iframe'))) # find all frames in page
+    browser.switch_to.frame(frame[1]) # switch to verification( will be changed soon, currently needed)
     #this is temporary
 
     # check if its error log in again
